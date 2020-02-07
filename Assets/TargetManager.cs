@@ -33,6 +33,9 @@ public class TargetManager : MonoBehaviour
     [SerializeField] float startingPathLength;
      float startingDifficulty;
     public float difficulty;
+    float pathScore = 0f;
+    float idealPathScore = 0f;
+    float pathCompletionRatio;
 
     void Start()
     {
@@ -48,6 +51,7 @@ public class TargetManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        pathScoring();
         playerPosition = playerObject.transform.position;
         playerDirection = playerObject.transform.forward;
         playerRotation = playerObject.transform.rotation;
@@ -79,15 +83,29 @@ public class TargetManager : MonoBehaviour
         newLoop.transform.position = playerObject.transform.position + new Vector3(pathInt*10, pathInt * 10, pathInt*10);
 
     }
+    public void increasePathScore()
+    {
+        pathScore++;
+    }
 
+    void pathScoring()
+    {
+        if (idealPathScore != 0f)
+        {
+            pathCompletionRatio = pathScore / idealPathScore;
+        }
+    }
     public void IncreaseDifficulty()
     {
+
+        
         // new difficulty to be distributed among path(50%), thrust(30%) and loop size (20%)
-        difficulty += difficultyChange;
+        difficulty += difficultyChange*pathCompletionRatio;
         //
-        currentPathLength += 0.5f * difficultyChange;
-        currentThrust += 0.3f * difficultyChange;
-        currentLoopSize -= 0.2f * difficultyChange;
+        if (currentPathLength < maxPathLength) { currentPathLength += 0.5f * difficultyChange; }
+
+        if (currentThrust < maxThrustFactor) { currentThrust += 0.3f * difficultyChange; }
+        if (currentLoopSize < maxLoopSize) { currentLoopSize -= 0.2f * difficultyChange; }
 
         //
         //difficultySum = difficulty;
@@ -116,12 +134,12 @@ public class TargetManager : MonoBehaviour
     public void decreaseDifficulty()
     {
         // new difficulty to be distributed among path(50%), thrust(30%) and loop size (20%)
-        difficulty += difficultyChange;
+        difficulty += difficultyChange*pathCompletionRatio;
         //
-        currentPathLength -= 0.5f * difficultyChange;
-        currentThrust -= 0.3f * difficultyChange;
-        currentLoopSize += 0.2f * difficultyChange;
+        if (currentPathLength < maxPathLength) { currentPathLength -= 0.5f * difficultyChange; }
 
+        if (currentThrust < maxThrustFactor) { currentThrust -= 0.3f * difficultyChange; }
+        if (currentLoopSize < maxLoopSize) { currentLoopSize += 0.2f * difficultyChange; }
 
         //difficulty -= difficultyChange;
         //difficultySum = difficulty;
@@ -257,12 +275,13 @@ public class TargetManager : MonoBehaviour
                         GameObject correctPath = Instantiate(pathPrefab, new Vector3(i * 10, j * 10, k * 10), Quaternion.identity);
                         correctPath.transform.localScale = new Vector3(currentLoopSize, currentLoopSize, currentLoopSize);
                         correctPath.transform.parent = path.transform;
+                        idealPathScore++;
                     }
 
                     if (tiles[i,j,k]==2)
                     {
                         GameObject loop = Instantiate(loopPrefab, new Vector3(i * 10, j * 10, k * 10), Quaternion.identity);
-                        loop.transform.localScale = new Vector3(currentLoopSize, currentLoopSize, currentLoopSize);
+                        loop.transform.localScale = new Vector3(currentLoopSize, currentLoopSize, 0.2f);
                         loop.transform.parent = path.transform;
                     }
                 }
@@ -271,5 +290,6 @@ public class TargetManager : MonoBehaviour
         lastObstacles = path;
         path.transform.position = playerPosition + playerDirection * 10;
         path.transform.forward = playerObject.transform.forward;
+        //pathScore = 0;
     }
 }

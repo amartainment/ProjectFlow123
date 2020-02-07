@@ -37,7 +37,7 @@ public class TargetBehavior : MonoBehaviour
 
                 if (distanceToBird <= playerControls.currentAccuracy)
                 {
-                    Debug.Log("increase difficulty");
+                    Debug.Log(distanceToBird + " increase difficulty "+ playerControls.currentAccuracy);
                     targetManager.IncreaseDifficulty();
                     playerControls.currentAccuracy = distanceToBird;
                 }
