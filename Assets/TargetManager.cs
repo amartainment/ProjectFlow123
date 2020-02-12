@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class TargetManager : MonoBehaviour
 {
     // Start is called before the first frame update
     BirdController player;
+   
     Vector3 playerPosition;
     Vector3 playerDirection;
     Quaternion playerRotation;
@@ -59,9 +61,13 @@ public class TargetManager : MonoBehaviour
         player.thrustFactor = currentThrust;
 
         //testing
+        if(OVRInput.GetDown(OVRInput.Button.One))
+        {
+            createPath(startingPathLength);
+        }
         if(Input.GetKeyDown(KeyCode.R))
         {
-            createLoop(startingLoopSize, 5);
+            createPath(startingPathLength);
 
         }
 
@@ -238,7 +244,7 @@ public class TargetManager : MonoBehaviour
         {
             //airTiles[convertedSize - 1, convertedSize - 1, convertedSize - 1] = 1;
             Debug.Log("path of length " + convertedSize);
-            airTiles[convertedSize - 2, convertedSize - 2, convertedSize - 1] = 2;
+            airTiles[convertedSize - 1, convertedSize - 1, convertedSize - 1] = 2;
             printPath(airTiles);
             return 0;
         }
@@ -288,7 +294,7 @@ public class TargetManager : MonoBehaviour
             }
         }
         lastObstacles = path;
-        path.transform.position = playerPosition + playerDirection * 10;
+        path.transform.position = playerPosition + playerDirection * 20;
         path.transform.forward = playerObject.transform.forward;
         //pathScore = 0;
     }
