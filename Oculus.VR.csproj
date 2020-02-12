@@ -145,11 +145,11 @@
     <None Include="Assets\Oculus\VR\Oculus.VR.asmdef" />
     <None Include="Assets\Oculus\VR\Resources\Underlay Impostor.shader" />
     <None Include="Assets\Oculus\VR\Plugins\placeholder.txt" />
-    <Reference Include="UnityEngine.UI">
-      <HintPath>D:/NID/S4-HKU/Artist Seminar/VR Exhibit/ProjectFlow/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>D:/NID/S4-HKU/Artist Seminar/VR Exhibit/ProjectFlow/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>D:/NID/S4-HKU/Artist Seminar/VR Exhibit/ProjectFlow/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

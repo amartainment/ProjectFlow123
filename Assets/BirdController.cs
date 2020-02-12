@@ -6,6 +6,7 @@ public class BirdController : MonoBehaviour
 {
 
     //player parameters
+    public GameObject eye;
     public float skill_accuracy = 0f; //how close to the center of the target is the player
     public float skill_dexterity = 0f; //how many obstacles has the player hit
     public float previousAccuracy;
@@ -31,7 +32,7 @@ public class BirdController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        naturalForces();
+        naturalForcesVR();
         checkPlayerInput();
         
     }
@@ -44,6 +45,11 @@ public class BirdController : MonoBehaviour
         }
     }
 
+    void naturalForcesVR()
+    {
+        //transform.forward = eye.transform.forward;
+        transform.localPosition += eye.transform.forward * thrustFactor * Time.deltaTime;
+    }
     void naturalForces()
     {
         //NEED to add provision to change flight parameters (speed) based on player skill 

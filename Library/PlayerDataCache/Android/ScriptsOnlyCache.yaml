@@ -63,23 +63,23 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9868}
+      Script: {instanceID: 9880}
     - Class: 114
-      Script: {instanceID: 10006}
+      Script: {instanceID: 10022}
     - Class: 114
-      Script: {instanceID: 10156}
+      Script: {instanceID: 10178}
     - Class: 114
-      Script: {instanceID: 10538}
+      Script: {instanceID: 10570}
     - Class: 114
-      Script: {instanceID: 10758}
+      Script: {instanceID: 10792}
     - Class: 114
-      Script: {instanceID: 10854}
+      Script: {instanceID: 10890}
     - Class: 114
-      Script: {instanceID: 10914}
+      Script: {instanceID: 10952}
     - Class: 114
-      Script: {instanceID: 11564}
+      Script: {instanceID: 11602}
     - Class: 114
-      Script: {instanceID: 11920}
+      Script: {instanceID: 11964}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -187,6 +187,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: StartMenu
+  - hash:
+      serializedVersion: 2
+      Hash: 04e4a8b0447477cc4e933d9e5311188f
+    assemblyName: UnityEngine.XR.LegacyInputHelpers.dll
+    namespaceName: UnityEngine.XR.LegacyInputHelpers
+    className: ArmModel
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -465,6 +471,12 @@ ScriptsOnlyBuild:
     className: TMP_SubMeshUI
   - hash:
       serializedVersion: 2
+      Hash: 52bcb9c2a78bdd8d98a59e915c346e75
+    assemblyName: UnityEngine.XR.LegacyInputHelpers.dll
+    namespaceName: UnityEngine.XR.LegacyInputHelpers
+    className: TransitionArmModel
+  - hash:
+      serializedVersion: 2
       Hash: 5ab533713adae59372fb3e10a585c186
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -511,6 +523,12 @@ ScriptsOnlyBuild:
     assemblyName: Oculus.VR.dll
     namespaceName: 
     className: OVRMesh
+  - hash:
+      serializedVersion: 2
+      Hash: d251bf88db6c95a6b1aa0b69298da9ef
+    assemblyName: UnityEngine.SpatialTracking.dll
+    namespaceName: UnityEngine.SpatialTracking
+    className: TrackedPoseDriver
   - hash:
       serializedVersion: 2
       Hash: caa533b001ae39b864ba8425019e2268
@@ -1245,7 +1263,7 @@ ScriptsOnlyBuild:
     className: PlatformManager
   - hash:
       serializedVersion: 2
-      Hash: 2d8be22286096e65986589a71ebd7d41
+      Hash: 3a0db17e8b2848cb36eb68d0a17ad7af
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BirdController
@@ -1423,6 +1441,12 @@ ScriptsOnlyBuild:
     assemblyName: Oculus.VR.dll
     namespaceName: 
     className: OVRGrabber
+  - hash:
+      serializedVersion: 2
+      Hash: 893dbdbfe611d62e230a686ea89f1efd
+    assemblyName: UnityEngine.XR.LegacyInputHelpers.dll
+    namespaceName: UnityEngine.XR.LegacyInputHelpers
+    className: SwingArmModel
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -1663,31 +1687,7 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 04e4a8b0447477cc4e933d9e5311188f
-    assemblyName: UnityEngine.XR.LegacyInputHelpers.dll
-    namespaceName: UnityEngine.XR.LegacyInputHelpers
-    className: ArmModel
-  - hash:
-      serializedVersion: 2
-      Hash: 52bcb9c2a78bdd8d98a59e915c346e75
-    assemblyName: UnityEngine.XR.LegacyInputHelpers.dll
-    namespaceName: UnityEngine.XR.LegacyInputHelpers
-    className: TransitionArmModel
-  - hash:
-      serializedVersion: 2
-      Hash: d251bf88db6c95a6b1aa0b69298da9ef
-    assemblyName: UnityEngine.SpatialTracking.dll
-    namespaceName: UnityEngine.SpatialTracking
-    className: TrackedPoseDriver
-  - hash:
-      serializedVersion: 2
-      Hash: 893dbdbfe611d62e230a686ea89f1efd
-    assemblyName: UnityEngine.XR.LegacyInputHelpers.dll
-    namespaceName: UnityEngine.XR.LegacyInputHelpers
-    className: SwingArmModel
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: D:/NID/S4-HKU/Artist Seminar/VR Exhibit/ProjectFlow/Questest/base1.apk
+  playerPath: D:/NID/S4-HKU/Artist Seminar/VR Exhibit/ProjectFlow/Questest/vralpha.apk
